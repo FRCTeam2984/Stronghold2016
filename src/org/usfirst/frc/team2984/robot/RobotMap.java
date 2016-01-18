@@ -21,4 +21,6 @@ public class RobotMap {
 	public static final CANTalon frontRightMotor = new CANTalon(4);
 	public static final CANTalon backLeftMotor = new CANTalon(16);
 	public static final CANTalon backRightMotor = new CANTalon(1);
+
+	public static final RemoteJoystick remoteJoystick = new RemoteJoystick("CustomData1", false);
 }

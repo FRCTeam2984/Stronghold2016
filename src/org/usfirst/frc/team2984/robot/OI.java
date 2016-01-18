@@ -19,13 +19,13 @@ public class OI {
 	/**
 	 * the button that will make the robot drive forward for one second
 	 */
-	Button drive = new JoystickButton(stick, 0);
+	Button drive = new JoystickButton(stick, 1);
     
 	/**
-	 * initilizes the behaviors for each input
+	 * initializes the behaviors for each input
 	 */
 	public OI(){
-		drive.whileHeld(new DriveForward());	
+		drive.whenPressed(new DriveForward());	
 	}
 }
 

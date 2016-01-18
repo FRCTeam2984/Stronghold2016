@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2984.robot.subsystems;
 
 import org.usfirst.frc.team2984.robot.RobotMap;
+import org.usfirst.frc.team2984.robot.commands.DriveUsingJoystick;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -15,7 +16,7 @@ public class FourWheelDrive extends Subsystem{
 	
 	@Override
 	protected void initDefaultCommand() {
-		
+		setDefaultCommand(new DriveUsingJoystick());
 	}
 	
 	/**
