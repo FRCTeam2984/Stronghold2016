@@ -4,16 +4,26 @@ import org.usfirst.frc.team2984.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class Drive extends Subsystem{
+/**
+ * 	A controller for the four wheel drive system using normal wheels.
+ * 
+ *  The algorithm uses simple adding with out normalization to calculate the motor speeds.
+ * 
+ * @author max
+ */
+public class FourWheelDrive extends Subsystem{
 	
 	@Override
 	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
 		
 	}
 	
+	/**
+	 * 	Drives with the given forward speed and rotation
+	 * 	@param fwrd the speed at witch to move forward [-1,1]
+	 * 	@param rotation the speed at which the robot should rotate where positive is clockwise [1,-1]
+	 */
 	public void drive(double fwrd, double rotation) {
-
         double wheelSpeeds[] = new double[4];
         wheelSpeeds[0] = fwrd+rotation;
         wheelSpeeds[1] = fwrd-rotation;
