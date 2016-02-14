@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2984.robot;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
 
 /**
@@ -17,10 +18,26 @@ public class RobotMap {
 	/**
 	 * The four drive train motors
 	 */
+//	public static final CANTalon frontLeftMotor = new CANTalon(14);
+//	public static final CANTalon frontRightMotor = new CANTalon(4);
+//	public static final CANTalon backLeftMotor = new CANTalon(16);
+//	public static final CANTalon backRightMotor = new CANTalon(1);
 	public static final CANTalon frontLeftMotor = new CANTalon(14);
-	public static final CANTalon frontRightMotor = new CANTalon(4);
-	public static final CANTalon backLeftMotor = new CANTalon(16);
-	public static final CANTalon backRightMotor = new CANTalon(1);
+	public static final CANTalon frontRightMotor = frontLeftMotor;
+	public static final CANTalon backLeftMotor = frontRightMotor;
+	public static final CANTalon backRightMotor = frontRightMotor;
 
 	public static final RemoteJoystick remoteJoystick = new RemoteJoystick("CustomData1", false);
+	
+	public static final AnalogInput leftDistanceSensor = new AnalogInput(0);
+	public static final AnalogInput middleDistanceSensor = new AnalogInput(1);
+	public static final AnalogInput rightDistanceSensor = new AnalogInput(2);
+	
+	public static final int distanceSensorAverageBit = 3;
+	
+	public static void init(){
+		RobotMap.leftDistanceSensor.setAverageBits(distanceSensorAverageBit);
+		RobotMap.leftDistanceSensor.setAverageBits(distanceSensorAverageBit);
+		RobotMap.leftDistanceSensor.setAverageBits(distanceSensorAverageBit);
+	}
 }

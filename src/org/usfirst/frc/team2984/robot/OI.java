@@ -2,6 +2,7 @@ package org.usfirst.frc.team2984.robot;
 
 import org.usfirst.frc.team2984.robot.commands.DriveForward;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

@@ -4,6 +4,7 @@ package org.usfirst.frc.team2984.robot;
 import org.usfirst.frc.team2984.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2984.robot.subsystems.FourWheelDrive;
 import org.usfirst.frc.team2984.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team2984.robot.subsystems.FindBall;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -23,6 +24,7 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static final FourWheelDrive drive = new FourWheelDrive();
+	public static final FindBall findBall = new FindBall();
 	public static OI oi;
 
     Command autonomousCommand;
@@ -34,6 +36,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+		RobotMap.init();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
