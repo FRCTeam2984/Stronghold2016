@@ -21,7 +21,7 @@ public class DriveUsingJoystick extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.drive.drive(RobotMap.remoteJoystick.getY(), RobotMap.remoteJoystick.getTwist());
+		Robot.drive.drive(RobotMap.remoteJoystick.getY(), -RobotMap.remoteJoystick.getTwist()*Math.abs(RobotMap.remoteJoystick.getTwist()));
 	}
 
 	/**

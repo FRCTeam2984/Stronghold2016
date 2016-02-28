@@ -9,9 +9,9 @@ import edu.wpi.first.wpilibj.command.Command;
  * 
  * @author max
  */
-public class DriveForward extends Command {
+public class StopDriving extends Command {
 	
-	public DriveForward(){
+	public StopDriving(){
 		requires(Robot.drive);
 		setTimeout(1.0);
 	}
@@ -21,7 +21,7 @@ public class DriveForward extends Command {
 	 */
 	@Override
 	protected void initialize() {
-		Robot.drive.drive(1.0, 0);
+		Robot.drive.drive(0, 0);
 	}
 
 	@Override

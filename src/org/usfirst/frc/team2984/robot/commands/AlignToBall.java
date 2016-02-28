@@ -10,11 +10,12 @@ import edu.wpi.first.wpilibj.command.Command;
  * 
  * @author max
  */
-public class AlingToBall extends Command {
+public class AlignToBall extends Command {
 	
-	public AlingToBall(){
+	public AlignToBall(){
 		requires(Robot.drive);
 		requires(Robot.findBall);
+		setTimeout(0.1);
 	}
 
 	/**
@@ -22,19 +23,19 @@ public class AlingToBall extends Command {
 	 */
 	@Override
 	protected void initialize() {
-		Robot.drive.drive(0, 0);
+//		Robot.drive.drive(0, 0);
 	}
 
 	/**
-	 * turns the robot to face the ball and moves close to it
+	 * turns the robot to face the ball and moves close to it`
 	 */
 	@Override
 	protected void execute() {
 		double[] ballLocation = Robot.findBall.findBall();
-		if(Math.abs(ballLocation[0]) > 300){
-			Robot.drive.drive(0, (ballLocation[0] > 0) ? -1 : 1);
-		} else if(ballLocation[1] < 2000){
-			Robot.drive.drive(1, 0);
+		if(Math.abs(ballLocation[0]) > 0.2){
+			Robot.drive.drive(0, (ballLocation[0] > 0) ? -1/Math.abs(ballLocation[0]) : 1/Math.abs(ballLocation[0]));
+		} else if(ballLocation[1] <1.0){
+			Robot.drive.drive(0.5, 0);
 		} else {
 			Robot.drive.drive(0, 0);	
 		}
@@ -53,7 +54,7 @@ public class AlingToBall extends Command {
 	 */
 	@Override
 	protected void end() {
-		Robot.drive.drive(0, 0);
+//		Robot.drive.drive(0, 0);
 	}
 
 	/**
