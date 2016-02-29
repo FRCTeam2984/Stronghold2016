@@ -19,7 +19,7 @@ public class ReportDistances extends Command {
 
 	@Override
 	protected void execute() {
-		SmartDashboard.putNumber("Right Distance Sensor", RobotMap.rightDistanceSensor.getAverageVoltage());
+		SmartDashboard.putBoolean("BB Sensor", RobotMap.bbS.get());
 		SmartDashboard.putNumber("Left Distance Sensor", RobotMap.leftDistanceSensor.getAverageVoltage());
 	}
 

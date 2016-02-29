@@ -1,9 +1,9 @@
 package org.usfirst.frc.team2984.robot;
 
 import org.usfirst.frc.team2984.robot.commands.AlignToBall;
-import org.usfirst.frc.team2984.robot.commands.StopDriving;
+import org.usfirst.frc.team2984.robot.commands.SpitOut;
+import org.usfirst.frc.team2984.robot.commands.SuckIn;
 
-import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -21,14 +21,16 @@ public class OI {
 	/**
 	 * the button that will make the robot drive forward for one second
 	 */
-	Button stop = new JoystickButton(stick, 8);
-	Button align = new JoystickButton(stick, 2);
+	Button suckIn = new JoystickButton(stick, 2);
+	Button spitOut = new JoystickButton(stick, 4);
+	Button align = new JoystickButton(stick, 8);
     
 	/**
 	 * initializes the behaviors for each input
 	 */
 	public OI(){
-		stop.whileHeld(new StopDriving());
+		suckIn.whileHeld(new SuckIn());
+		spitOut.whileHeld(new SpitOut());
 		align.whileHeld(new AlignToBall());
 	}
 }

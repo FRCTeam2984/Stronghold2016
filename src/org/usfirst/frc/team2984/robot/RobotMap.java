@@ -2,6 +2,8 @@ package org.usfirst.frc.team2984.robot;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Victor;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -34,6 +36,18 @@ public class RobotMap {
 	public static final AnalogInput leftDistanceSensor = new AnalogInput(2);
 	public static final AnalogInput middleDistanceSensor = new AnalogInput(1);
 	public static final AnalogInput rightDistanceSensor = new AnalogInput(0);
+	
+	/**
+	 * The two sensor to see if the ball is sucked in or not High if not there, low if there
+	 */
+	public static final DigitalInput ballInLimitOne = new DigitalInput(0);
+	public static final DigitalInput ballInLimitTwo = new DigitalInput(1);
+	
+	/**
+	 * The motors for the feeder arm attachment [1.0,-1.0] [takeIn, SpitOut]
+	 */
+	public static final Victor feederMotorOne = new Victor(0);
+	public static final Victor feederMotorTwo = new Victor(1);
 	
 	public static final int distanceSensorAverageBit = 3;
 	
