@@ -1,14 +1,19 @@
 package org.usfirst.frc.team2984.robot.commands;
 
 import org.usfirst.frc.team2984.robot.Robot;
-import org.usfirst.frc.team2984.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class DriveUsingJoystick extends Command {
+/**
+ * A command to drive the robot forward for one second
+ * 
+ * @author max
+ */
+public class StopDriving extends Command {
 	
-	public DriveUsingJoystick(){
+	public StopDriving(){
 		requires(Robot.drive);
+		setTimeout(1.0);
 	}
 
 	/**
@@ -21,7 +26,7 @@ public class DriveUsingJoystick extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.drive.drive(RobotMap.remoteJoystick.getY(), -RobotMap.remoteJoystick.getTwist()*Math.abs(RobotMap.remoteJoystick.getTwist()));
+		
 	}
 
 	/**
