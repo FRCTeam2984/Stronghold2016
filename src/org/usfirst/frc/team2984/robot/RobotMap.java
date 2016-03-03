@@ -18,12 +18,22 @@ public class RobotMap {
 	public static final int joystickChannel = 0;
 	
 	/**
+	 * Lambda for the Joystick cutoff
+	 */
+	public static final double lambda = 0.05;
+	
+	/**
 	 * The four drive train motors
 	 */
 	public static final CANTalon frontLeftMotor = new CANTalon(14);
 	public static final CANTalon frontRightMotor = new CANTalon(1);
 	public static final CANTalon backLeftMotor = new CANTalon(10);
 	public static final CANTalon backRightMotor = new CANTalon(11); 
+	
+	/**
+	 * The motor for the arm
+	 */
+	public static final CANTalon armMotor = new CANTalon(15); //set the value
 
 	/**
 	 * the remove joystick to connect to out custome controller
@@ -42,6 +52,12 @@ public class RobotMap {
 	 */
 	public static final DigitalInput ballInLimitOne = new DigitalInput(0);
 	public static final DigitalInput ballInLimitTwo = new DigitalInput(1);
+	
+	/**
+	 * The two limit switches on the arm
+	 */
+	public static final DigitalInput fwrdArmLimit = new DigitalInput(2);
+	public static final DigitalInput backArmLimit = new DigitalInput(3);
 	
 	/**
 	 * The motors for the feeder arm attachment [1.0,-1.0] [takeIn, SpitOut]

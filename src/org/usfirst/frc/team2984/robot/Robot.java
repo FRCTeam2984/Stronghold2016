@@ -2,10 +2,10 @@
 package org.usfirst.frc.team2984.robot;
 
 import org.usfirst.frc.team2984.robot.commands.ExampleCommand;
-import org.usfirst.frc.team2984.robot.subsystems.FourWheelDrive;
+import org.usfirst.frc.team2984.robot.subsystems.Arm;
 import org.usfirst.frc.team2984.robot.subsystems.BallFeeder;
-import org.usfirst.frc.team2984.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team2984.robot.subsystems.FindBall;
+import org.usfirst.frc.team2984.robot.subsystems.FourWheelDrive;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -23,7 +23,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static final Arm arm = new Arm();
 	public static final FourWheelDrive drive = new FourWheelDrive();
 	public static final FindBall findBall = new FindBall();
 	public static final BallFeeder feeder = new BallFeeder();

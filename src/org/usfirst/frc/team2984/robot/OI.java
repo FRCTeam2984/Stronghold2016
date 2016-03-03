@@ -16,7 +16,7 @@ public class OI {
 	/**
 	 * The Joystick that is used for button input (PS2 controller)
 	 */
-	Joystick stick = new Joystick(RobotMap.joystickChannel);
+	public Joystick stick = new Joystick(RobotMap.joystickChannel);
 	
 	/**
 	 * the button that will make the robot drive forward for one second
