@@ -17,6 +17,7 @@ public class DriveUsingJoystick extends Command {
 	@Override
 	protected void initialize() {
 		Robot.drive.drive(0, 0);
+		Robot.drive.setRamp(RobotMap.driveRamRate);
 	}
 
 	@Override
@@ -38,6 +39,7 @@ public class DriveUsingJoystick extends Command {
 	@Override
 	protected void end() {
 		Robot.drive.drive(0, 0);
+		Robot.drive.setRamp(0);
 	}
 
 	/**

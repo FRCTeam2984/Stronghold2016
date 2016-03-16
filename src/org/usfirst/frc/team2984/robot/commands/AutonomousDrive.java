@@ -4,35 +4,41 @@ import org.usfirst.frc.team2984.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class SuckIn extends Command{
+/*
+ * Does nothing particularly interesting
+ * 
+ * Runs in O(Infinite)for execution
+ * 
+ * Good bye Dave
+ */
+public class AutonomousDrive extends Command {
 
-	public SuckIn(){
-		requires(Robot.feeder);
+	public AutonomousDrive()
+	{
+		requires(Robot.drive);
+		setTimeout(4.0);
 	}
-	
+
 	@Override
 	protected void initialize() {
+		Robot.drive.drive(0, 0);
 		
 	}
 
 	@Override
 	protected void execute() {
-//		if(!Robot.feeder.isBallIn()){
-			Robot.feeder.takeIn();
-//		} else {
-//			Robot.feeder.stop();
-//		}
+		Robot.drive.drive(0.5, 0);
+		
 	}
 
 	@Override
 	protected boolean isFinished() {
-		return false;
-		//return Robot.feeder.isBallIn();
+		return this.isTimedOut();
 	}
 
 	@Override
 	protected void end() {
-		Robot.feeder.stop();
+		Robot.drive.drive(0, 0);
 		
 	}
 
@@ -40,5 +46,4 @@ public class SuckIn extends Command{
 	protected void interrupted() {
 		end();
 	}
-
 }

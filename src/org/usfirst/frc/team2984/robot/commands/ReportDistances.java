@@ -19,8 +19,12 @@ public class ReportDistances extends Command {
 
 	@Override
 	protected void execute() {
-		SmartDashboard.putBoolean("BB Sensor", RobotMap.bbS.get());
+		SmartDashboard.putBoolean("Back Arm Limit Sensor", RobotMap.backArmLimit.get());
+		SmartDashboard.putBoolean("Fwrd Arm Limit Sensor", RobotMap.fwrdArmLimit.get());
 		SmartDashboard.putNumber("Left Distance Sensor", RobotMap.leftDistanceSensor.getAverageVoltage());
+		SmartDashboard.putNumber("Right Distance Sensor", RobotMap.rightDistanceSensor.getAverageVoltage());
+		SmartDashboard.putNumber("Arm Pot", RobotMap.armPot.getVoltage()*1000);
+
 	}
 
 	@Override

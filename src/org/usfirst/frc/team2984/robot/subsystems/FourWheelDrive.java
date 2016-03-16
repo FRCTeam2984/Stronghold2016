@@ -36,4 +36,11 @@ public class FourWheelDrive extends Subsystem{
         RobotMap.backRightMotor.set(wheelSpeeds[3]);
     }
 
+	public void setRamp(double driveramrate) {
+		RobotMap.frontLeftMotor.setVoltageRampRate(driveramrate);
+		RobotMap.frontRightMotor.setVoltageRampRate(driveramrate);
+		RobotMap.backLeftMotor.setVoltageRampRate(driveramrate);
+		RobotMap.backRightMotor.setVoltageRampRate(driveramrate);
+	}
+
 }

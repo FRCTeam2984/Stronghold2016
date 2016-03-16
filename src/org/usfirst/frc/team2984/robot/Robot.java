@@ -1,12 +1,14 @@
 
 package org.usfirst.frc.team2984.robot;
 
-import org.usfirst.frc.team2984.robot.commands.ExampleCommand;
+import org.usfirst.frc.team2984.robot.commands.AutonomousDrive;
 import org.usfirst.frc.team2984.robot.subsystems.Arm;
 import org.usfirst.frc.team2984.robot.subsystems.BallFeeder;
+import org.usfirst.frc.team2984.robot.subsystems.Camera;
 import org.usfirst.frc.team2984.robot.subsystems.FindBall;
 import org.usfirst.frc.team2984.robot.subsystems.FourWheelDrive;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -27,7 +29,9 @@ public class Robot extends IterativeRobot {
 	public static final FourWheelDrive drive = new FourWheelDrive();
 	public static final FindBall findBall = new FindBall();
 	public static final BallFeeder feeder = new BallFeeder();
+	public static final Camera camera = new Camera();
 	public static OI oi;
+	public CameraServer server;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -38,9 +42,13 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+//		server = CameraServer.getInstance();
+//		server.setQuality(30);
+//		server.startAutomaticCapture("cam0");
 		RobotMap.init();
+
         chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new ExampleCommand());
+        chooser.addDefault("Default Auto", new AutonomousDrive());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
     }
@@ -112,5 +120,9 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+    }
+    
+    public void testInit(){
+		
     }
 }

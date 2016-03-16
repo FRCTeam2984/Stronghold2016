@@ -3,6 +3,7 @@ package org.usfirst.frc.team2984.robot.commands;
 import org.usfirst.frc.team2984.robot.Robot;
 import org.usfirst.frc.team2984.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class ArmViaJoystick extends Command{
@@ -10,10 +11,15 @@ public class ArmViaJoystick extends Command{
 	private long lastTime;
 	private double lastValue;
 	
+	public ArmViaJoystick(){
+		requires(Robot.arm);
+	}
+	
 	@Override
 	protected void initialize() {
 		this.lastTime = System.currentTimeMillis();
 		this.lastValue = 0;
+		RobotMap.armMotor.setVoltageRampRate(24);
 	}
 
 	/**

@@ -12,13 +12,13 @@ public class BallFeeder extends Subsystem{
 	}
 	
 	public void takeIn(){
-		RobotMap.feederMotorOne.set(1.0);
-		RobotMap.feederMotorTwo.set(1.0);
+		RobotMap.feederMotorOne.set(-1.0*RobotMap.suckSpeed);
+		RobotMap.feederMotorTwo.set(-1.0*RobotMap.suckSpeed);
 	}
 	
 	public void spitOut(){
-		RobotMap.feederMotorOne.set(-1.0);
-		RobotMap.feederMotorTwo.set(-1.0);
+		RobotMap.feederMotorOne.set(1.0);
+		RobotMap.feederMotorTwo.set(1.0);
 	}
 	
 	public void stop(){
@@ -29,7 +29,7 @@ public class BallFeeder extends Subsystem{
 	public boolean isBallIn(){
 		boolean first = RobotMap.ballInLimitOne.get();
 		boolean second = RobotMap.ballInLimitTwo.get();
-		return !first && !second;
+		return first || second;
 	}
 
 	

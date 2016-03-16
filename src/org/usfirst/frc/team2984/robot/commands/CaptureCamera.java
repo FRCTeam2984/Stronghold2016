@@ -4,10 +4,10 @@ import org.usfirst.frc.team2984.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class SuckIn extends Command{
+public class CaptureCamera extends Command{
 
-	public SuckIn(){
-		requires(Robot.feeder);
+	public CaptureCamera(){
+		requires(Robot.camera);
 	}
 	
 	@Override
@@ -17,28 +17,26 @@ public class SuckIn extends Command{
 
 	@Override
 	protected void execute() {
-//		if(!Robot.feeder.isBallIn()){
-			Robot.feeder.takeIn();
-//		} else {
-//			Robot.feeder.stop();
-//		}
+		Robot.camera.capture();
+		
 	}
 
 	@Override
 	protected boolean isFinished() {
+		// TODO Auto-generated method stub
 		return false;
-		//return Robot.feeder.isBallIn();
 	}
 
 	@Override
 	protected void end() {
-		Robot.feeder.stop();
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	protected void interrupted() {
-		end();
+		// TODO Auto-generated method stub
+		
 	}
 
 }

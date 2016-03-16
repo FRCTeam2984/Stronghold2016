@@ -2,6 +2,7 @@ package org.usfirst.frc.team2984.robot;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Victor;
 
@@ -16,6 +17,10 @@ public class RobotMap {
 	 * The channel for the PS2 controller
 	 */
 	public static final int joystickChannel = 0;
+	
+	public static CameraServer camServer;
+
+	public static final double suckSpeed = 0.6;
 	
 	/**
 	 * Lambda for the Joystick cutoff
@@ -33,7 +38,7 @@ public class RobotMap {
 	/**
 	 * The motor for the arm
 	 */
-	public static final CANTalon armMotor = new CANTalon(15); //set the value
+	public static final CANTalon armMotor = new CANTalon(20); 
 
 	/**
 	 * the remove joystick to connect to out custome controller
@@ -54,6 +59,11 @@ public class RobotMap {
 	public static final DigitalInput ballInLimitTwo = new DigitalInput(1);
 	
 	/**
+	 * The potentiometer to get the arm location
+	 */
+	public static final AnalogInput armPot = new AnalogInput(3);
+	
+	/**
 	 * The two limit switches on the arm
 	 */
 	public static final DigitalInput fwrdArmLimit = new DigitalInput(2);
@@ -67,9 +77,19 @@ public class RobotMap {
 	
 	public static final int distanceSensorAverageBit = 3;
 	
+	public static final double armSpeedLimit = 1;
+	
+	public static final double[] potMapings = {0.05,0.2,0.5,1,1,0.5,0.2,0.05};
+	
+	public static final double potFwrd = 13.2;
+	public static final double potBack = 2;
+	
+	public static final double driveRamRate = 30;
+	
 	public static void init(){
 		RobotMap.leftDistanceSensor.setAverageBits(distanceSensorAverageBit);
-		RobotMap.leftDistanceSensor.setAverageBits(distanceSensorAverageBit);
-		RobotMap.leftDistanceSensor.setAverageBits(distanceSensorAverageBit);
+		RobotMap.middleDistanceSensor.setAverageBits(distanceSensorAverageBit);
+		RobotMap.rightDistanceSensor.setAverageBits(distanceSensorAverageBit);
+		RobotMap.armPot.setAverageBits(distanceSensorAverageBit);
 	}
 }
